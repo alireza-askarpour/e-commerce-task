@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply scroll-smooth text-gray-900 bg-white;
+  }
+
+  a,
+  button {
+    @apply select-none;
+  }
+
+  a {
+    @apply focus:outline-none;
+  }
+
+  button,
+  input {
+    @apply focus:outline-none;
+  }
+}
