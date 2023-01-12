@@ -1,4 +1,4 @@
-/** @type {import('tailwindcss').Config} */
+const colors = require("tailwindcss/colors")
 
 module.exports = {
   content: [
@@ -10,6 +10,14 @@ module.exports = {
     fontFamily: {
       sans: "Vazir",
     },
+    colors: {
+      ...colors,
+      "gray-1": "#333333",
+      "gray-2": "#4F4F4F",
+      "gray-6": "#F2F2F2",
+      "gray-7": "#F7F7F7",
+      "light-pink": "#FFE9EE"
+    }
   },
   plugins: [],
 };
