@@ -7,7 +7,7 @@ interface IProps {
 
 const Layout = ({ children }: IProps) => {
   return (
-    <section className="px-4 lg:px-0">
+    <section className="px-4">
       <Navbar />
       <main className="min-h-screen">{children}</main>
       <Footer />

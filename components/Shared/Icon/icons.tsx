@@ -14,6 +14,8 @@ import Send2 from "./icons/Send2"
 import ShoppingCart from "./icons/ShoppingCart"
 import TicketDiscount from "./icons/TicketDiscount"
 import Whatsapp from "./icons/Whatsapp"
+import Menu from "./icons/Menu"
+import Login from "./icons/Login"
 
 export const icons = {
   "arrow-down-2": ArrowDown2,
@@ -32,6 +34,8 @@ export const icons = {
   map: Map,
   send: Send,
   whatsapp: Whatsapp,
+  menu: Menu,
+  login: Login,
 }
 
 export type IconName = keyof typeof icons
