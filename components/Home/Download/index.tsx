@@ -1,4 +1,5 @@
 import { DOWNLOAD_LIST } from "constants/download"
+import DownloadButton from "./DownloadButton"
 
 const Download = () => {
   return (
@@ -12,12 +13,9 @@ const Download = () => {
         <h2 className="text-white font-black text-lg"> ویتسل را همیشه همراه داشته باشید!</h2>
         <div className="flex items-center gap-3 mt-4">
           {DOWNLOAD_LIST.map((item, index) => (
-            <button className="bg-[#ffffff14] flex items-center px-4 py-3 rounded-full  transition-color duration-[400ms] group hover:bg-white">
-              <img src={item.icon} />
-              <span className="mr-2 text-sm transition-color duration-[400ms] text-white font-semibold group-hover:text-[#CE273B]">
-                {item.title}
-              </span>
-            </button>
+            <DownloadButton key={index} icon={item.icon}>
+              {item.title}
+            </DownloadButton>
           ))}
         </div>
       </div>
