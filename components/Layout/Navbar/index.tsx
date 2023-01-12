@@ -1,50 +1,51 @@
 import { Button, IconButton } from "components/Shared"
 import Icon from "components/Shared/Icon"
+import { NAVBAR_LINKS } from "constants/navbarLinks"
 import Link from "next/link"
-
-const links = [
-  { href: "/category", label: "دسته بندی ها", icon: "category", isDropdown: true },
-  { href: "/fire", label: "پرفروش ترین ها", icon: "fire" },
-  { href: "/ticket-discount", label: "تخفیف دار ها", icon: "ticket-discount" },
-]
+import { SearchInput } from "components/Shared"
 
 const Navbar = () => {
   return (
     <header className="container mx-auto">
-      <nav
-        className="bg-white shadow-lg rounded-full flex items-center justify-between mt-8 mb-4 px-6 py-4 text-sm"
-        style={{
-          boxShadow: "0px 0px 24px rgba(189, 182, 183, 0.25)",
-          borderRadius: "40px",
-        }}
-      >
-        {/* Right Items */}
-        <div className="flex items-center space-x-4 space-x-reverse">
+      <nav className="bg-white lg:rounded-full lg:flex lg:items-center lg:justify-between lg:mt-8 lg:mb-4 lg:px-6 lg:py-4 text-sm lg:gray-shadow">
+        {/* Mobile View */}
+        <div className="flex lg:hidden items-center py-3 ">
+          <img src="/logo.svg" className="w-6 h-6" />
+          <span className="font-black text-base text-red pr-2">ویتسل</span>
+        </div>
+        <div className="flex items-center justify-between lg:hidden">
+          <IconButton style={{ background: "#fff" }} size="sm" className="ml-7">
+            <Icon name="menu" color="black" />
+          </IconButton>
+          <SearchInput placeholder="جستجو..." className="flex-1 md:flex-none md:w-96" />
+          <div className="flex items-center">
+            <IconButton style={{ background: "#fff" }} size="lg">
+              <Icon name="shopping-cart" />
+            </IconButton>
+            <IconButton style={{ background: "#fff" }} size="lg">
+              <Icon name="login" />
+            </IconButton>
+          </div>
+        </div>
+
+        {/* Right Items - Navbar links and logo (Desktop View) */}
+        <div className="hidden lg:flex items-center space-x-4 space-x-reverse">
           <div>
             <img src="/logo.svg" className="w-10 h-10" />
           </div>
 
-          {links.map(({ href, label, icon, isDropdown }, index) => (
-            <Link key={index} href={href} className="px-1 transition flex items-center">
-              <Icon name={icon} size={20} color="black" />
-              <span className="text-[#4F4F4F] mr-1.5">{label}</span>
-              {isDropdown && <Icon name="arrow-down-2" size={16} color="black" className="mr-1.5" />}
+          {NAVBAR_LINKS.map((item: any, index: number) => (
+            <Link key={index} href={item.href} className="px-1 transition flex items-center">
+              <Icon name={item.icon} size={20} color="black" />
+              <span className="text-[#4F4F4F] mr-1.5">{item.label}</span>
+              {item.isDropdown && <Icon name="arrow-down-2" size={16} color="black" className="mr-1.5" />}
             </Link>
           ))}
         </div>
 
-        {/* Left Items */}
-        <div className="flex items-center gap-2">
-          <div className="w-64 flex items-center justify-end rounded-full bg-[#F7F7F7]">
-            <input
-              type="text"
-              placeholder="جستجوی محصولات..."
-              className="flex-1 outline-none pr-3 bg-inherit rounded-full"
-            />
-            <IconButton size="lg">
-              <Icon name="search-normal" size={20} />
-            </IconButton>
-          </div>
+        {/* Left Items Loggin and card button and search box (Desktop View) */}
+        <div className="hidden lg:flex items-center gap-2">
+          <SearchInput placeholder="جستجوی محصولات..." className="w-64" />
 
           <IconButton size="lg">
             <Icon name="shopping-cart" size={20} />
