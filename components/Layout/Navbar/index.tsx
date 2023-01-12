@@ -50,7 +50,7 @@ const Navbar = () => {
             <Icon name="shopping-cart" size={20} />
           </IconButton>
 
-          <Button className="text-sm py-3">ورود/ ثبت نام</Button>
+          <Button className="text-sm py-3 h-12">ورود/ ثبت نام</Button>
         </div>
       </nav>
     </header>
