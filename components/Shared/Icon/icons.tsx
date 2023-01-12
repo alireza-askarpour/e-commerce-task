@@ -1,3 +1,4 @@
+import ArrowDown2 from "./icons/ArrowDown2"
 import ArrowLeft from "./icons/ArrowLeft"
 import ArrowLeft2 from "./icons/ArrowLeft2"
 import ArrowRight from "./icons/ArrowRight"
@@ -15,6 +16,7 @@ import TicketDiscount from "./icons/TicketDiscount"
 import Whatsapp from "./icons/Whatsapp"
 
 export const icons = {
+  "arrow-down-2": ArrowDown2,
   "arrow-left": ArrowLeft,
   "arrow-left-2": ArrowLeft2,
   "arrow-right": ArrowRight,
