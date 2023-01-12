@@ -21,3 +21,9 @@
     @apply focus:outline-none;
   }
 }
+
+@layer components {
+  .bg-gradient-red {
+    background: linear-gradient(239.65deg, #ce273b 14.24%, #f23b51 126.89%);
+  }
+}
