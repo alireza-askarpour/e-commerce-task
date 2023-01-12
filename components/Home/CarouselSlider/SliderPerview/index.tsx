@@ -43,7 +43,11 @@ const SliderPreview = ({ data }: IProps) => {
             <div className="pb-8">
               <div className="flex items-center justify-end">
                 <span className="font-black text-lg ml-0.5 text-[#333333]">
-                  {toPersinaDigit(item.price.toLocaleString())}
+                  {toPersinaDigit(
+                    item.discount
+                      ? discountPrice(item.discount, item.price).toLocaleString()
+                      : item.price.toLocaleString(),
+                  )}
                 </span>
                 <span className="text-xs text-[#4F4F4F]">تومان</span>
               </div>
@@ -55,11 +59,7 @@ const SliderPreview = ({ data }: IProps) => {
                   {toPersinaDigit(item.discount)}%
                 </span>
                 <span className="line-through text-[#BDBDBD] text-sm">
-                  {toPersinaDigit(
-                    item.discount
-                      ? discountPrice(item.discount, item.price).toLocaleString()
-                      : item.price.toLocaleString(),
-                  )}
+                  {toPersinaDigit(item.price.toLocaleString())}
                 </span>
               </div>
             </div>
