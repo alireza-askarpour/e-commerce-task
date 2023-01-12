@@ -11,13 +11,13 @@ import "swiper/css/pagination"
 const SliderPreview = ({ data }: IProps) => {
   return (
     <Swiper
-      slidesPerView={3}
+      slidesPerView={2}
       spaceBetween={16}
       modules={[Autoplay, Navigation]}
       autoplay={{ delay: 5000 }}
       breakpoints={{
-        768: { slidesPerView: 4 },
-        992: { slidesPerView: 5 },
+        768: { slidesPerView: 3 },
+        992: { slidesPerView: 4 },
         1200: { slidesPerView: 6 },
       }}
       navigation={{
@@ -52,10 +52,7 @@ const SliderPreview = ({ data }: IProps) => {
                 <span className="text-xs text-[#4F4F4F]">تومان</span>
               </div>
               <div className="flex items-center justify-between">
-                <span
-                  className="text-white py-1 px-3 rounded-full gird place-items-center font-medium text-sm"
-                  style={{ background: "linear-gradient(252.18deg, #D72339 0.28%, #F23B51 93.8%)" }}
-                >
+                <span className="text-white py-1 px-3 rounded-full gird place-items-center font-medium text-sm bg-button-primary">
                   {toPersinaDigit(item.discount)}%
                 </span>
                 <span className="line-through text-[#BDBDBD] text-sm">
