@@ -58,7 +58,6 @@ const Footer = () => {
             { title: "کالای دیجیتال", link: "/" },
             { title: "سوپرمارکت", link: "/" },
             { title: "گوشی موبایل", link: "/" },
-            { title: "", link: "/" },
             { title: "ابزار الات", link: "/" },
             { title: "لوازم تحریر", link: "/" },
           ]}
