@@ -52,7 +52,7 @@ const SliderPreview = ({ data }: IProps) => {
                 <span className="text-xs text-[#4F4F4F]">تومان</span>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-white py-1 px-3 rounded-full gird place-items-center font-medium text-sm bg-button-primary">
+                <span className="text-white pt-1.5 pb-0.5 px-3 rounded-full gird place-items-center font-medium text-sm bg-button-primary">
                   {toPersinaDigit(item.discount)}%
                 </span>
                 <span className="line-through text-[#BDBDBD] text-sm">

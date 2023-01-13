@@ -17,21 +17,19 @@ const Banner = ({ className, images, responsiveDir }: IProps) => {
     >
       <div
         className={classNames(
-          responsiveDir === "row"
-            ? "h-28 md:h-auto lg:w-1/2 lg:max-h-56 overflow-hidden rounded-2xl lg:rounded-3xl"
-            : "lg:w-1/2 lg:max-h-56 overflow-hidden  rounded-2xl lg:rounded-3xl",
+          "lg:w-1/2 lg:max-h-56 overflow-hidden rounded-2xl lg:rounded-3xl",
+          responsiveDir === "row" && "h-28 md:h-auto",
         )}
       >
-        <img src={images[0]} className="rounded-2xl lg:rounded-3xl object-cover w-full h-full" />
+        <img src={images[0]} className="rounded-2xl lg:rounded-3xl object-center object-cover w-full h-full" />
       </div>
       <div
         className={classNames(
-          responsiveDir === "row"
-            ? "h-28 md:h-auto lg:w-1/2 lg:max-h-56 overflow-hidden rounded-2xl lg:rounded-3xl"
-            : "lg:w-1/2 lg:max-h-56 overflow-hidden rounded-2xl lg:rounded-3xl",
+          "lg:w-1/2 lg:max-h-56 overflow-hidden rounded-2xl lg:rounded-3xl",
+          responsiveDir === "row" && "h-28 md:h-auto",
         )}
       >
-        <img src={images[1]} className="rounded-2xl lg:rounded-3xl object-cover w-full h-full" />
+        <img src={images[1]} className="rounded-2xl lg:rounded-3xl object-center object-cover w-full h-full" />
       </div>
     </section>
   )
