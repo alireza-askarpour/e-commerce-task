@@ -1,18 +1,37 @@
 import { classNames } from "utils"
 
-type Props = {
+interface IProps {
   className?: string
+  responsiveDir?: "row" | "col"
   images: [string, string]
 }
 
-const Banner = ({ className, images }: Props) => {
+const Banner = ({ className, images, responsiveDir }: IProps) => {
   return (
-    <section className={classNames("container mx-auto flex gap-x-4", className)}>
-      <div className="w-1/2 max-h-56 h-full overflow-hidden rounded-3xl">
-        <img src={images[0]} className="rounded-3xl object-cover w-full h-full" />
+    <section
+      className={classNames(
+        "container mx-auto flex gap-2 lg:gap-4",
+        responsiveDir === "row" ? "" : "flex-col md:flex-row",
+        className,
+      )}
+    >
+      <div
+        className={classNames(
+          responsiveDir === "row"
+            ? "h-28 md:h-auto lg:w-1/2 lg:max-h-56 overflow-hidden rounded-2xl lg:rounded-3xl"
+            : "lg:w-1/2 lg:max-h-56 overflow-hidden  rounded-2xl lg:rounded-3xl",
+        )}
+      >
+        <img src={images[0]} className="rounded-2xl lg:rounded-3xl object-cover w-full h-full" />
       </div>
-      <div className="w-1/2 max-h-56 h-full overflow-hidden object-cover rounded-3xl">
-        <img src={images[1]} className="rounded-3xl w-full h-full" />
+      <div
+        className={classNames(
+          responsiveDir === "row"
+            ? "h-28 md:h-auto lg:w-1/2 lg:max-h-56 overflow-hidden rounded-2xl lg:rounded-3xl"
+            : "lg:w-1/2 lg:max-h-56 overflow-hidden rounded-2xl lg:rounded-3xl",
+        )}
+      >
+        <img src={images[1]} className="rounded-2xl lg:rounded-3xl object-cover w-full h-full" />
       </div>
     </section>
   )

@@ -9,20 +9,12 @@ import "swiper/css"
 import "swiper/css/pagination"
 
 const ImageSlider = () => {
-  const pagination = {
-    clickable: true,
-    renderBullet: function (index, className) {
-      return '<span class="' + className + '">' + (index + 1) + "</span>"
-    },
-  }
-
   return (
     <>
       <Swiper
-        pagination={pagination}
         modules={[Autoplay, Navigation]}
         autoplay={{ delay: 3000 }}
-        className="rounded-3xl overflow-hidden"
+        className="rounded-3xl overflow-hidden h-full bg-gray-7"
         navigation={{
           prevEl: ".prev-button",
           nextEl: ".next-button",
@@ -36,8 +28,8 @@ const ImageSlider = () => {
           ))}
         </div>
         <div>
-          <Arrow direction="right" className="prev-button absolute right-0 top-1/2 -translate-y-1/2 z-10" />
-          <Arrow direction="left" className="next-button absolute left-0 top-1/2 -translate-y-1/2 z-10" />
+          <Arrow direction="right" responsive className="prev-button absolute right-0 top-1/2 -translate-y-1/2 z-10" />
+          <Arrow direction="left" responsive className="next-button absolute left-0 top-1/2 -translate-y-1/2 z-10" />
         </div>
       </Swiper>
     </>

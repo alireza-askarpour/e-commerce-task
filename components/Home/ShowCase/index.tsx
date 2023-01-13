@@ -6,16 +6,16 @@ const bannerImages: [string, string] = ["/images/banner-img-2.svg", "/images/ban
 
 const ShowCase = () => {
   return (
-    <section className="container mx-auto mb-16">
-      <section className="flex gap-4 mb-4">
-        <div className="w-3/4">
+    <section className="container mx-auto my-6 lg:mb-16">
+      <section className="flex w-full mb-2 lg:mb-4">
+        <div className="w-full lg:w-3/4 lg:pl-2">
           <ImageSlider />
         </div>
-        <div className="w-1/4">
+        <div className="hidden lg:inline-block w-1/4 lg:pr-2">
           <MiniSlider />
         </div>
       </section>
-      <Banner images={bannerImages} />
+      <Banner images={bannerImages} responsiveDir="row" />
     </section>
   )
 }

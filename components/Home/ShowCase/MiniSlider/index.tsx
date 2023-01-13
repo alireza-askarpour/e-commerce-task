@@ -13,7 +13,7 @@ const MiniSlider = () => {
       <Swiper
         modules={[Autoplay, Navigation]}
         autoplay={{ delay: 3000 }}
-        className="rounded-3xl overflow-hidden h-full"
+        className="rounded-3xl overflow-hidden h-full bg-gray-7"
         navigation={{
           prevEl: ".prev-button",
           nextEl: ".next-button",
