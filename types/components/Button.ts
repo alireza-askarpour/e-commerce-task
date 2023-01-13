@@ -4,5 +4,6 @@ export interface IProps {
   href?: string
   disabled?: boolean
   type?: "button" | "submit" | "reset"
+  variant?: "primary" | "secondary"
   onClick?: () => void
 }

@@ -31,6 +31,10 @@
     background: linear-gradient(252.18deg, #d72339 0.28%, #f23b51 93.8%);
   }
 
+  .bg-button-primary-hover {
+    background: linear-gradient(239.65deg, #ce273b 14.24%, #f23b51 126.89%);
+  }
+
   .gray-shadow {
     box-shadow: 0px 0px 24px 0px #bdb6b740;
   }
