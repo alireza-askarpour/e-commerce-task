@@ -21,5 +21,5 @@ module.exports = {
       "red": "#C2123C",
     }
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/aspect-ratio')],
 };

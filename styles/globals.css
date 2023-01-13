@@ -38,4 +38,8 @@
   .gray-shadow {
     box-shadow: 0px 0px 24px 0px #bdb6b740;
   }
+
+  .remove-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 }

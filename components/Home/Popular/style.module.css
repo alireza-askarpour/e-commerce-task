@@ -1,0 +1,3 @@
+.Card:hover img {
+  content: url("../../../public/images/popular-img-1.svg");
+}
