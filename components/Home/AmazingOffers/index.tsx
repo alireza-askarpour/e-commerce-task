@@ -7,8 +7,8 @@ const AmazingOffers = () => {
   return (
     <section className="container mx-auto mt-16">
       <SectionHeader icon="fire" title="پیشنهادات شگفت انگیز" link="/amazing-offers" className="mb-7" />
-      <section className="flex">
-        <div className="relative w-1/4 bg-[#F7F7F7] overflow-hidden rounded-3xl pt-4 grid place-items-center">
+      <section className="flex gap-6 overflow-x-auto remove-scrollbar">
+        <div className="hidden relative w-1/4 bg-[#F7F7F7] overflow-hidden rounded-3xl pt-4 lg:grid place-items-center">
           <Badge className="absolute top-0 left-3" />
           <img src="/images/amazing-offers-img-1.svg" className="mb-5" />
           <div className="w-full px-4 pb-4">
@@ -21,15 +21,14 @@ const AmazingOffers = () => {
         </div>
 
         {/* List Item */}
-        <div className="w-3/4 flex items-center flex-wrap gap-6">
+        <div className="flex lg:grid grid-cols-3 gap-y-4 gap-x-6 lg:w-full">
           {AMAZING_OFFERS_ITEMS.map((item, index) => (
-            <div key={index} className="flex items-center bg-[#F7F7F7] rounded-3xl px-3">
+            <div key={index} className="relative w-72 lg:w-auto flex justify-around overflow-hidden items-center py-3 bg-[#F7F7F7] rounded-3xl px-3">
               <div>
-                <img src={item.image} className="max-w-[90px] w-full" />
+                <img src={item.image} className="max-w-[90px] lg:w-full" />
               </div>
-              <div>
+              <div className="flex-1">
                 <h5 className="font-semibold text-sm text-right">{item.title}</h5>
-
                 <div className="flex items-center justify-end">
                   <span className="font-black text-lg ml-0.5 text-[#333333]">
                     {toPersinaDigit(
@@ -43,8 +42,7 @@ const AmazingOffers = () => {
 
                 <div className="flex items-center justify-between">
                   <span
-                    className="text-white py-1 px-3 rounded-full gird place-items-center font-medium text-sm"
-                    style={{ background: "linear-gradient(252.18deg, #D72339 0.28%, #F23B51 93.8%)" }}
+                    className="text-white pt-1.5 pb-0.5 px-3 rounded-full gird place-items-center font-medium text-sm bg-button-primary"
                   >
                     {toPersinaDigit(item.discount)}%
                   </span>
@@ -53,6 +51,7 @@ const AmazingOffers = () => {
                   </span>
                 </div>
               </div>
+              <Badge className="absolute top-0 left-3" />
             </div>
           ))}
         </div>
