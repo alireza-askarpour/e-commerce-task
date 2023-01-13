@@ -4,7 +4,7 @@ export interface IProps {
   href: string
   children?: React.ReactNode
   variant?: "underline"
-  size?: number
+  style?: React.CSSProperties
   className?: string
   icon?: IconName
 }

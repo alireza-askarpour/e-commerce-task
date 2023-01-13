@@ -5,11 +5,11 @@ import Icon from "../Icon"
 
 import styles from "./style.module.css"
 
-const CustomLink = ({ href, children, size, variant, className, icon }: IProps) => {
+const CustomLink = ({ href, children, style, variant, className, icon }: IProps) => {
   return (
     <Link
       href={href}
-      style={{ fontSize: `${size}px` || `14px` }}
+      style={style}
       className={classNames(
         "group text-gray-2 text-sm transition duration-300 hover:text-red",
         variant && styles.CustomLink,

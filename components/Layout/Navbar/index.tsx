@@ -1,6 +1,6 @@
 import { Button, CustomLink, IconButton, Icon, SearchInput } from "components/Shared"
 import { useAuth } from "provider/Auth"
-import { NAVBAR_LINKS } from "constants/navbarLinks"
+import CategoriesDropdown from "./CategoriesDropdown"
 
 const Navbar = () => {
   const { loggedin } = useAuth()
@@ -40,19 +40,13 @@ const Navbar = () => {
           <div>
             <img src="/logo.svg" className="w-10 h-10" />
           </div>
-
-          {NAVBAR_LINKS.map((item: any, index: number) => (
-            <CustomLink
-              key={index}
-              href={item.href}
-              variant="underline"
-              icon={item.icon}
-              className="px-1 flex items-center"
-            >
-              <>{item.label}</>
-              {item.isDropdown && <Icon name="arrow-down-2" size={16} color="black" className="mr-1.5" />}
-            </CustomLink>
-          ))}
+          <CategoriesDropdown />
+          <CustomLink href="/" variant="underline" icon="fire" className="px-1 flex items-center">
+            پرفروش ترین ها
+          </CustomLink>
+          <CustomLink href="/" variant="underline" icon="ticket-discount" className="px-1 flex items-center">
+            تخفیف دار ها
+          </CustomLink>
         </div>
 
         {/* Left Items Loggin and card button and search box (Desktop View) */}
