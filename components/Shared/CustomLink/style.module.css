@@ -1,0 +1,12 @@
+.CustomLink {
+  @apply relative pt-1 pb-[3px];
+}
+
+.CustomLink::before {
+  @apply absolute right-0 bottom-0 w-0 h-[1px] bg-[#D72339] transition-all duration-300;
+  content: "";
+}
+
+.CustomLink:hover::before {
+  @apply w-full;
+}
