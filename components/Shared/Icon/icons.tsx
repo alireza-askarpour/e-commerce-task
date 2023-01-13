@@ -16,6 +16,7 @@ import TicketDiscount from "./icons/TicketDiscount"
 import Whatsapp from "./icons/Whatsapp"
 import Menu from "./icons/Menu"
 import Login from "./icons/Login"
+import User from "./icons/User"
 
 export const icons = {
   "arrow-down-2": ArrowDown2,
@@ -36,6 +37,7 @@ export const icons = {
   whatsapp: Whatsapp,
   menu: Menu,
   login: Login,
+  user: User,
 }
 
 export type IconName = keyof typeof icons

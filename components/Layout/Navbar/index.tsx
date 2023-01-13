@@ -1,7 +1,10 @@
 import { Button, CustomLink, IconButton, Icon, SearchInput } from "components/Shared"
+import { useAuth } from "provider/Auth"
 import { NAVBAR_LINKS } from "constants/navbarLinks"
 
 const Navbar = () => {
+  const { loggedin } = useAuth()
+
   return (
     <header className="container mx-auto">
       <nav className="bg-white lg:rounded-full lg:flex lg:items-center lg:justify-between lg:mt-8 lg:mb-4 lg:px-6 lg:py-4 text-sm lg:gray-shadow">
@@ -24,7 +27,10 @@ const Navbar = () => {
             </IconButton>
 
             <IconButton style={{ background: "#fff" }} size="lg" className="group">
-              <Icon name="login" className="group-hover:fill-[#D72339] transition-colors duration-200" />
+              <Icon
+                name={loggedin ? "user" : "login"}
+                className="group-hover:fill-[#D72339] transition-colors duration-200"
+              />
             </IconButton>
           </div>
         </div>
@@ -57,9 +63,15 @@ const Navbar = () => {
             <Icon name="shopping-cart" className="group-hover:fill-[#D72339] transition-colors duration-200" />
           </IconButton>
 
-          <Button className="text-sm py-3 h-12" variant="primary">
-            ورود/ ثبت نام
-          </Button>
+          {loggedin ? (
+            <IconButton size="lg" className="group">
+              <Icon name="user" className="group-hover:fill-[#D72339] transition-colors duration-200" />
+            </IconButton>
+          ) : (
+            <Button className="text-sm py-3 h-12" variant="primary">
+              ورود/ ثبت نام
+            </Button>
+          )}
         </div>
       </nav>
     </header>
